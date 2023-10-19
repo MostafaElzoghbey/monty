@@ -21,7 +21,7 @@ int main(int argc, char **argv)
 	script_fd = fopen(argv[1], "r");
 	if (script_fd == NULL)
 		return (fileOpenError(argv[1]));
-	exit_status = run_monty(script_fd);
+	exit_status = runMonty(script_fd);
 	fclose(script_fd);
 	return (exit_status);
 }

@@ -46,7 +46,8 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-
+/* CORE FUNCTIONS */
+int runMonty(FILE *script_fd);
 
 /* ERROR FUNCTIONS */
 int usageError(void);
