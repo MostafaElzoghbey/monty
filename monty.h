@@ -4,6 +4,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <string.h>
+
+#define DELIMS " \n\t\a\b"
+#define QUEUE 1
+#define STACK 0
+
+/* OPCODE TOKENS */
+extern char **op_toks;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -34,5 +45,11 @@ typedef struct instruction_s
         char *opcode;
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+
+
+/* ERROR FUNCTIONS */
+int usageError(void);
+int fileOpenError(char *filename);
 
 #endif
