@@ -48,6 +48,7 @@ typedef struct instruction_s
 
 /* CORE FUNCTIONS */
 int runMonty(FILE *script_fd);
+int initStack(stack_t **stack);
 
 /* ERROR FUNCTIONS */
 int usageError(void);
