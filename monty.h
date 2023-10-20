@@ -55,6 +55,8 @@ void set_op_tok_error(int error_code);
 void monty_push(stack_t **stack, unsigned int line_number);
 void monty_pall(stack_t **stack, unsigned int line_number);
 void monty_pint(stack_t **stack, unsigned int line_number);
+void monty_pop(stack_t **stack, unsigned int line_number);
+void monty_swap(stack_t **stack, unsigned int line_number);
 
 /* CUSTOM FUNCTIONS */
 char **strtow(char *str, char *delims);
@@ -80,5 +82,8 @@ int mallocError(void);
 int unknown_op_error(char *opcode, unsigned int line_number);
 int no_int_error(unsigned int line_number);
 int pint_error(unsigned int line_number);
+int pint_error(unsigned int line_number);
+int pop_error(unsigned int line_number);
+int short_stack_error(unsigned int line_number, char *op);
 
 #endif
