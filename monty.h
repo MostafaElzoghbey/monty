@@ -54,6 +54,7 @@ void set_op_tok_error(int error_code);
 /* INTERPERTER FUNCTIONS */
 void monty_push(stack_t **stack, unsigned int line_number);
 void monty_pall(stack_t **stack, unsigned int line_number);
+void monty_pint(stack_t **stack, unsigned int line_number);
 
 /* CUSTOM FUNCTIONS */
 char **strtow(char *str, char *delims);

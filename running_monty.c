@@ -55,6 +55,7 @@ void (*get_op_func(char *opcode))(stack_t**, unsigned int)
 	instruction_t op_funcs[] = {
 		{"push", monty_push},
 		{"pall", monty_pall},
+		{"pint", monty_pint},
 		{NULL, NULL}
 	};
 	int i;
