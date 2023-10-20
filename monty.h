@@ -27,9 +27,9 @@ extern char **op_toks;
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /**
@@ -42,13 +42,18 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 /* CORE FUNCTIONS */
 int runMonty(FILE *script_fd);
 int initStack(stack_t **stack);
+void set_op_tok_error(int error_code);
+
+/* INTERPERTER FUNCTIONS */
+void monty_push(stack_t **stack, unsigned int line_number);
+void monty_pall(stack_t **stack, unsigned int line_number);
 
 /* CUSTOM FUNCTIONS */
 char **strtow(char *str, char *delims);
@@ -59,11 +64,14 @@ char *get_next_word(char *str, char *delims);
 int is_empty_line(char *line, char *delims);
 void free_stack(stack_t **stack);
 void free_tokens(void);
+char *get_int(int num);
+int check_mode(stack_t *stack);
 
 /* ERROR FUNCTIONS */
 int usageError(void);
 int fileOpenError(char *filename);
 int mallocError(void);
 int unknown_op_error(char *opcode, unsigned int line_number);
+int no_int_error(unsigned int line_number);
 
 #endif

@@ -1,5 +1,7 @@
 #include "monty.h"
 
+int runMonty(FILE *script_fd);
+
 /**
  * is_empty_line - Checks if a line read from getline only contains delimiters.
  * @line: A pointer to the line.

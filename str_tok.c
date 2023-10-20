@@ -1,5 +1,7 @@
 #include "monty.h"
 
+char **strtow(char *str, char *delims);
+
 /**
  * is_delim - checks if stream has delimitor char
  *
