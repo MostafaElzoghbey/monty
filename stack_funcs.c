@@ -11,7 +11,7 @@ int initStack(stack_t **stack)
 	stack_t *st;
 
 	st = malloc(sizeof(stack_t));
-	if (s == NULL)
+	if (st == NULL)
 		return (mallocError());
 
 	st->n = STACK;

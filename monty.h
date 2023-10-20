@@ -66,6 +66,11 @@ void free_stack(stack_t **stack);
 void free_tokens(void);
 char *get_int(int num);
 int check_mode(stack_t *stack);
+unsigned int _abs(int i);
+int get_numbase_len(unsigned int num, unsigned int base);
+void fill_numbase_buff(unsigned int num, unsigned int base,
+			char *buff, int buff_size);
+unsigned int token_arr_len(void);
 
 /* ERROR FUNCTIONS */
 int usageError(void);
