@@ -50,18 +50,17 @@ void free_tokens(void)
  *
  * Return: A pointer to the corresponding function.
  */
-void (*get_op_func(char *opcode))(stack_t**, unsigned int)
+void (*get_op_func(char *opcode))(stack_t **, unsigned int)
 {
 	instruction_t op_funcs[] = {
-		{"push", monty_push},
-		{"pall", monty_pall},
-		{"pint", monty_pint},
-		{"pop", monty_pop},
-		{"swap", monty_swap},
-		{"add", monty_add},
-		{"nop", monty_nop},
-		{NULL, NULL}
-	};
+		{"push", montyPush},
+		{"pall", montyPall},
+		{"pint", montyPint},
+		{"pop", montyPop},
+		{"swap", montySwap},
+		{"add", montyAdd},
+		{"nop", montyNop},
+		{NULL, NULL}};
 	int i;
 
 	for (i = 0; op_funcs[i].opcode; i++)
@@ -95,7 +94,7 @@ unsigned int token_arr_len(void)
  */
 int runMonty(FILE *script_fd)
 {
-	void (*op_func)(stack_t**, unsigned int);
+	void (*op_func)(stack_t **, unsigned int);
 	char *line = NULL;
 	unsigned int line_number = 0, prev_tok_len = 0;
 	stack_t *stack = NULL;
@@ -124,7 +123,7 @@ int runMonty(FILE *script_fd)
 		if (op_func == NULL)
 		{
 			free_stack(&stack);
-			exit_status = unknown_op_error(op_toks[0], line_number);
+			exit_status = unknownOpError(op_toks[0], line_number);
 			free_tokens();
 			break;
 		}

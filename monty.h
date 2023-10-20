@@ -52,13 +52,13 @@ int initStack(stack_t **stack);
 void set_op_tok_error(int error_code);
 
 /* INTERPERTER FUNCTIONS */
-void monty_push(stack_t **stack, unsigned int line_number);
-void monty_pall(stack_t **stack, unsigned int line_number);
-void monty_pint(stack_t **stack, unsigned int line_number);
-void monty_pop(stack_t **stack, unsigned int line_number);
-void monty_swap(stack_t **stack, unsigned int line_number);
-void monty_add(stack_t **stack, unsigned int line_number);
-void monty_nop(stack_t **stack, unsigned int line_number);
+void montyPush(stack_t **stack, unsigned int line_number);
+void montyPall(stack_t **stack, unsigned int line_number);
+void montyPint(stack_t **stack, unsigned int line_number);
+void montyPop(stack_t **stack, unsigned int line_number);
+void montySwap(stack_t **stack, unsigned int line_number);
+void montyAdd(stack_t **stack, unsigned int line_number);
+void montyNop(stack_t **stack, unsigned int line_number);
 
 /* CUSTOM FUNCTIONS */
 char **strtow(char *str, char *delims);
@@ -74,15 +74,15 @@ int check_mode(stack_t *stack);
 unsigned int _abs(int i);
 int get_numbase_len(unsigned int num, unsigned int base);
 void fill_numbase_buff(unsigned int num, unsigned int base,
-			char *buff, int buff_size);
+		       char *buff, int buff_size);
 unsigned int token_arr_len(void);
 
 /* ERROR FUNCTIONS */
 int usageError(void);
 int fileOpenError(char *filename);
 int mallocError(void);
-int unknown_op_error(char *opcode, unsigned int line_number);
-int no_int_error(unsigned int line_number);
+int unknownOpError(char *opcode, unsigned int line_number);
+int noIntError(unsigned int line_number);
 int pint_error(unsigned int line_number);
 int pint_error(unsigned int line_number);
 int pop_error(unsigned int line_number);
