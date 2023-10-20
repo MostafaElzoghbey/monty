@@ -50,8 +50,20 @@ typedef struct instruction_s
 int runMonty(FILE *script_fd);
 int initStack(stack_t **stack);
 
+/* CUSTOM FUNCTIONS */
+char **strtow(char *str, char *delims);
+int is_delim(char ch, char *delims);
+int get_word_count(char *str, char *delims);
+int get_word_length(char *str, char *delims);
+char *get_next_word(char *str, char *delims);
+int is_empty_line(char *line, char *delims);
+void free_stack(stack_t **stack);
+void free_tokens(void);
+
 /* ERROR FUNCTIONS */
 int usageError(void);
 int fileOpenError(char *filename);
+int mallocError(void);
+int unknown_op_error(char *opcode, unsigned int line_number);
 
 #endif
