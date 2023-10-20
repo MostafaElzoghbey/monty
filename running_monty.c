@@ -58,6 +58,8 @@ void (*get_op_func(char *opcode))(stack_t**, unsigned int)
 		{"pint", monty_pint},
 		{"pop", monty_pop},
 		{"swap", monty_swap},
+		{"add", monty_add},
+		{"nop", monty_nop},
 		{NULL, NULL}
 	};
 	int i;
