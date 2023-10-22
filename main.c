@@ -1,5 +1,6 @@
 #include "monty.h"
 
+int execute(char *content, stack_t **stack, unsigned int counter, FILE *file);
 bus_t bus = {NULL, NULL, NULL, 0};
 
 /**
@@ -30,7 +31,8 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 		{"rotr", interpreter_rotr},
 		{"queue", interpreter_queue},
 		{"stack", interpreter_stack},
-		{NULL, NULL}};
+		{NULL, NULL}
+	};
 	unsigned int i = 0;
 	char *op;
 

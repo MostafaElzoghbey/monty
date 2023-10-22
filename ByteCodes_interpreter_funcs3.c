@@ -103,7 +103,8 @@ void interpreter_pstr(stack_t **head, unsigned int counter)
   *@counter: line_number
   *Return: no return
  */
-void interpreter_rotl(stack_t **head,  __attribute__((unused)) unsigned int counter)
+void interpreter_rotl(stack_t **head,
+__attribute__((unused)) unsigned int counter)
 {
 	stack_t *tmp = *head, *aux;
 
@@ -129,7 +130,8 @@ void interpreter_rotl(stack_t **head,  __attribute__((unused)) unsigned int coun
   *@counter: line_number
   *Return: no return
  */
-void interpreter_rotr(stack_t **head, __attribute__((unused)) unsigned int counter)
+void interpreter_rotr(stack_t **head,
+__attribute__((unused)) unsigned int counter)
 {
 	stack_t *copy;
 
