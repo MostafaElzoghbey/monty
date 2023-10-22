@@ -3,33 +3,34 @@
 bus_t bus = {NULL, NULL, NULL, 0};
 
 /**
-* execute - executes the opcode
-* @stack: head linked list - stack
-* @counter: line_counter
-* @file: poiner to monty file
-* @content: line content
-* Return: no return
-*/
+ * execute - executes the opcode
+ * @stack: head linked list - stack
+ * @counter: line_counter
+ * @file: poiner to monty file
+ * @content: line content
+ * Return: no return
+ */
 int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 {
 	instruction_t opst[] = {
-				{"push", f_push}, {"pall", f_pall}, {"pint", f_pint},
-				{"pop", f_pop},
-				{"swap", f_swap},
-				{"add", f_add},
-				{"nop", f_nop},
-				{"sub", f_sub},
-				{"div", f_div},
-				{"mul", f_mul},
-				{"mod", f_mod},
-				{"pchar", f_pchar},
-				{"pstr", f_pstr},
-				{"rotl", f_rotl},
-				{"rotr", f_rotr},
-				{"queue", f_queue},
-				{"stack", f_stack},
-				{NULL, NULL}
-				};
+		{"push", interpreter_push},
+		{"pall", interpreter_pall},
+		{"pint", interpreter_pint},
+		{"pop", interpreter_pop},
+		{"swap", interpreter_swap},
+		{"add", interpreter_add},
+		{"nop", interpreter_nop},
+		{"sub", interpreter_sub},
+		{"div", interpreter_div},
+		{"mul", interpreter_mul},
+		{"mod", interpreter_mod},
+		{"pchar", interpreter_pchar},
+		{"pstr", interpreter_pstr},
+		{"rotl", interpreter_rotl},
+		{"rotr", interpreter_rotr},
+		{"queue", interpreter_queue},
+		{"stack", interpreter_stack},
+		{NULL, NULL}};
 	unsigned int i = 0;
 	char *op;
 
@@ -40,26 +41,29 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 	while (opst[i].opcode && op)
 	{
 		if (strcmp(op, opst[i].opcode) == 0)
-		{	opst[i].f(stack, counter);
+		{
+			opst[i].f(stack, counter);
 			return (0);
 		}
 		i++;
 	}
 	if (op && opst[i].opcode == NULL)
-	{ fprintf(stderr, "L%d: unknown instruction %s\n", counter, op);
+	{
+		fprintf(stderr, "L%d: unknown instruction %s\n", counter, op);
 		fclose(file);
 		free(content);
 		free_stack(*stack);
-		exit(EXIT_FAILURE); }
+		exit(EXIT_FAILURE);
+	}
 	return (1);
 }
 
 /**
-* main - monty code interpreter
-* @argc: number of arguments
-* @argv: monty file location
-* Return: 0 on success
-*/
+ * main - monty code interpreter
+ * @argc: number of arguments
+ * @argv: monty file location
+ * Return: 0 on success
+ */
 int main(int argc, char *argv[])
 {
 	char *content;
@@ -95,5 +99,5 @@ int main(int argc, char *argv[])
 	}
 	free_stack(stack);
 	fclose(file);
-return (0);
+	return (0);
 }

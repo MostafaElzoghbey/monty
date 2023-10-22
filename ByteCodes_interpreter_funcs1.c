@@ -1,12 +1,12 @@
 #include "monty.h"
 
 /**
- * f_push - add node to the stack
+ * interpreter_push - add node to the stack
  * @head: stack head
  * @counter: line_number
  * Return: no return
 */
-void f_push(stack_t **head, unsigned int counter)
+void interpreter_push(stack_t **head, unsigned int counter)
 {
 	int n, j = 0, flag = 0;
 
@@ -39,12 +39,12 @@ void f_push(stack_t **head, unsigned int counter)
 }
 
 /**
- * f_pall - prints the stack
+ * interpreter_pall - prints the stack
  * @head: stack head
  * @counter: no used
  * Return: no return
 */
-void f_pall(stack_t **head, unsigned int counter)
+void interpreter_pall(stack_t **head, unsigned int counter)
 {
 	stack_t *h;
 	(void)counter;
@@ -60,12 +60,12 @@ void f_pall(stack_t **head, unsigned int counter)
 }
 
 /**
- * f_pint - prints the top
+ * interpreter_pint - prints the top
  * @head: stack head
  * @counter: line_number
  * Return: no return
 */
-void f_pint(stack_t **head, unsigned int counter)
+void interpreter_pint(stack_t **head, unsigned int counter)
 {
 	if (*head == NULL)
 	{
@@ -79,12 +79,12 @@ void f_pint(stack_t **head, unsigned int counter)
 }
 
 /**
- * f_pop - prints the top
+ * interpreter_pop - prints the top
  * @head: stack head
  * @counter: line_number
  * Return: no return
 */
-void f_pop(stack_t **head, unsigned int counter)
+void interpreter_pop(stack_t **head, unsigned int counter)
 {
 	stack_t *h;
 
@@ -102,12 +102,12 @@ void f_pop(stack_t **head, unsigned int counter)
 }
 
 /**
- * f_swap - adds the top two elements of the stack.
+ * interpreter_swap - adds the top two elements of the stack.
  * @head: stack head
  * @counter: line_number
  * Return: no return
 */
-void f_swap(stack_t **head, unsigned int counter)
+void interpreter_swap(stack_t **head, unsigned int counter)
 {
 	stack_t *h;
 	int len = 0, aux;

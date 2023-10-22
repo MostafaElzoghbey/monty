@@ -1,13 +1,13 @@
 #include "monty.h"
 
 /**
- * f_mod - computes the rest of the division of the second
+ * interpreter_mod - computes the rest of the division of the second
  * top element of the stack by the top element of the stack
  * @head: stack head
  * @counter: line_number
  * Return: no return
 */
-void f_mod(stack_t **head, unsigned int counter)
+void interpreter_mod(stack_t **head, unsigned int counter)
 {
 	stack_t *h;
 	int len = 0, aux;
@@ -42,13 +42,13 @@ void f_mod(stack_t **head, unsigned int counter)
 }
 
 /**
- * f_pchar - prints the char at the top of the stack,
+ * interpreter_pchar - prints the char at the top of the stack,
  * followed by a new line
  * @head: stack head
  * @counter: line_number
  * Return: no return
 */
-void f_pchar(stack_t **head, unsigned int counter)
+void interpreter_pchar(stack_t **head, unsigned int counter)
 {
 	stack_t *h;
 
@@ -73,13 +73,13 @@ void f_pchar(stack_t **head, unsigned int counter)
 }
 
 /**
- * f_pstr - prints the string starting at the top of the stack,
+ * interpreter_pstr - prints the string starting at the top of the stack,
  * followed by a new
  * @head: stack head
  * @counter: line_number
  * Return: no return
 */
-void f_pstr(stack_t **head, unsigned int counter)
+void interpreter_pstr(stack_t **head, unsigned int counter)
 {
 	stack_t *h;
 	(void)counter;
@@ -98,12 +98,12 @@ void f_pstr(stack_t **head, unsigned int counter)
 }
 
 /**
-  *f_rotl- rotates the stack to the top
+  *interpreter_rotl- rotates the stack to the top
   *@head: stack head
   *@counter: line_number
   *Return: no return
  */
-void f_rotl(stack_t **head,  __attribute__((unused)) unsigned int counter)
+void interpreter_rotl(stack_t **head,  __attribute__((unused)) unsigned int counter)
 {
 	stack_t *tmp = *head, *aux;
 
@@ -124,12 +124,12 @@ void f_rotl(stack_t **head,  __attribute__((unused)) unsigned int counter)
 }
 
 /**
-  *f_rotr- rotates the stack to the bottom
+  *interpreter_rotr- rotates the stack to the bottom
   *@head: stack head
   *@counter: line_number
   *Return: no return
  */
-void f_rotr(stack_t **head, __attribute__((unused)) unsigned int counter)
+void interpreter_rotr(stack_t **head, __attribute__((unused)) unsigned int counter)
 {
 	stack_t *copy;
 

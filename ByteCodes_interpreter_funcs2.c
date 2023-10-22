@@ -1,12 +1,12 @@
 #include "monty.h"
 
 /**
- * f_add - adds the top two elements of the stack.
+ * interpreter_add - adds the top two elements of the stack.
  * @head: stack head
  * @counter: line_number
  * Return: no return
 */
-void f_add(stack_t **head, unsigned int counter)
+void interpreter_add(stack_t **head, unsigned int counter)
 {
 	stack_t *h;
 	int len = 0, aux;
@@ -33,24 +33,24 @@ void f_add(stack_t **head, unsigned int counter)
 }
 
 /**
-  *f_nop- nothing
+  *interpreter_nop- nothing
   *@head: stack head
   *@counter: line_number
   *Return: no return
  */
-void f_nop(stack_t **head, unsigned int counter)
+void interpreter_nop(stack_t **head, unsigned int counter)
 {
 	(void) counter;
 	(void) head;
 }
 
 /**
-  *f_sub- sustration
+  *interpreter_sub- sustration
   *@head: stack head
   *@counter: line_number
   *Return: no return
  */
-void f_sub(stack_t **head, unsigned int counter)
+void interpreter_sub(stack_t **head, unsigned int counter)
 {
 	stack_t *aux;
 	int sus, nodes;
@@ -74,12 +74,12 @@ void f_sub(stack_t **head, unsigned int counter)
 }
 
 /**
- * f_div - divides the top two elements of the stack.
+ * interpreter_div - divides the top two elements of the stack.
  * @head: stack head
  * @counter: line_number
  * Return: no return
 */
-void f_div(stack_t **head, unsigned int counter)
+void interpreter_div(stack_t **head, unsigned int counter)
 {
 	stack_t *h;
 	int len = 0, aux;
@@ -114,12 +114,12 @@ void f_div(stack_t **head, unsigned int counter)
 }
 
 /**
- * f_mul - multiplies the top two elements of the stack.
+ * interpreter_mul - multiplies the top two elements of the stack.
  * @head: stack head
  * @counter: line_number
  * Return: no return
 */
-void f_mul(stack_t **head, unsigned int counter)
+void interpreter_mul(stack_t **head, unsigned int counter)
 {
 	stack_t *h;
 	int len = 0, aux;
